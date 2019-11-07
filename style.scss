@@ -1,3 +1,13 @@
+:root {
+  --green: #55c54d;
+  --sgreen: #d9fdd9;
+  --sgray: #d2d2d2;
+  --dgray: #949494;
+  --fgray: #efeeee;
+  --dblue: #080892;
+  --lblue: #74d7e6;
+}
+
 .container {
   font-size: 10px;
   font-family:arial;
@@ -6,14 +16,17 @@
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  max-width: 90vw;
+  margin: 0 auto;
+  border:1px solid var(--sgray);
   input {
     width: 100%;
     max-width: 300px;
-    border: 1px solid #74d7e6;
+    border: 1px solid var(--lblue);
     border-radius: 4px;
     padding: 0.5rem;
     font-size: 1.1rem;
-    color: #404eb3;
+    color: var(--dblue);
   }
   .buttons {
     display: flex;
@@ -25,15 +38,15 @@
       max-width: 75px;
       border-radius: 4px;
       margin: 0.5rem;
-      border: 1px solid #999;
+      border: 1px solid var(--dgray);
       &.btn, &.solve {
-        background-color: #55c54d;
+        background-color: var(--green);
         color: white;
         font-weight: bold;
         font-size: 1rem;
       }
       &.clr {
-        background-color: #949494;
+        background-color: var(--dgray);
         color: white;
         font-size: 0.9rem;
       }
@@ -41,6 +54,8 @@
   }
 
   .containerList {
+    min-height: 9rem;
+    max-height: 100%;
     padding-top: 1rem;
     display: flex;
     width: 100%;
@@ -50,19 +65,19 @@
       position: relative;
       width: 75px;
       height: 75px;
-      border: 1px solid #fbfbfb;
+      border: 1px solid var(--fgray);
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
       text-transform: capitalize;
       font-size: 1.5rem;
-      color: #080892;
+      color: var(--dblue);
       .alpha {
         position: absolute;
         top: 0;
         right: 0;
-        color: #a1a1a1;
+        color: var(--dgray);
         text-transform: capitalize;
         font-size: initial;
       }
@@ -70,15 +85,15 @@
   }
   #result {
     font-weight: bold;
-    color: #55c54d;
+    color: var(--green);
     font-size: 2rem;
     padding: 1rem;
     border:0;
-    border-bottom: 2px dashed #55c54d;
+    border-bottom: 2px dashed var(--green);
   }
   .hr {
     border: 0;
-    border-top: 1px solid #d9fdd9;
+    border-top: 1px solid var(--sgreen);
     width: 50%;
     height: 1px;
     margin: 2rem;
@@ -94,5 +109,6 @@
     text-align:left;
     width:100%;
     max-width:300px;
+    color: var(--dgray);
   }
 }

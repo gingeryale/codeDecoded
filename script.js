@@ -3,21 +3,20 @@ let btn = document.querySelector(".btn");
 let clr = document.querySelector(".clr");
 let allAlphabet = `abcdefghijklmnopqrstuvwxyz`;
 let uller = document.querySelector(".containerList");
+let coded;
+let solve = document.querySelector(".solve");
+let finalQ = document.querySelector("#result");
+let clearAll = document.querySelector('.clearAll');
 
 btn.addEventListener("click", function () {
   phrase = document
     .querySelector("#base")
-    .value.replace(/\s+/g, "")
+    .value.toLowerCase().replace(/\s+/g, "")
     .split("");
-  //console.log(phrase);
   const phraseClean = [...new Set(phrase)];
-  //console.log(phraseClean);
   allAlphabet.split("");
-  //console.log(allAlphabet);
   let coded = [...phraseClean, ...allAlphabet];
-  //console.log(coded);
   var final = [...new Set(coded)];
-  //console.log(final);
   test(final, allAlphabet);
 });
 
@@ -41,9 +40,7 @@ clr.addEventListener("click", function () {
   uller.innerHTML = "";
 });
 
-let coded;
-let solve = document.querySelector(".solve");
-let finalQ = document.querySelector("#result");
+
 
 solve.addEventListener("click", function () {
   let parent = document.querySelector(".containerList");
@@ -53,11 +50,10 @@ solve.addEventListener("click", function () {
   let finalArray = [];
   cphrase = document
     .querySelector("#code")
-    .value.replace(/\s+/g, "")
+    .value.toLowerCase().replace(/\s+/g, "")
     .split("");
   console.log("what I typed", cphrase);
   cphrase.forEach(function (el) {
-    //debugger;
     console.log("each element", el);
     for (let i = 0; i < divs.length; i++) {
       if (mod[i].innerHTML == el) {
@@ -67,3 +63,8 @@ solve.addEventListener("click", function () {
     finalQ.textContent = finalArray.join("");
   });
 });
+
+
+clearAll.addEventListener("click", function () {
+  location.reload();
+})
