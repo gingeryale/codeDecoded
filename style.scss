@@ -8,8 +8,11 @@
   --lblue: #74d7e6;
 }
 
-.container {
+body{
   font-size: 10px;
+}
+
+.container {
   font-family:arial;
   display: flex;
   flex-direction: column;
@@ -39,7 +42,7 @@
       border-radius: 4px;
       margin: 0.5rem;
       border: 1px solid var(--dgray);
-      &.btn, &.solve {
+      &.btn, &.solve, &.clearAll {
         background-color: var(--green);
         color: white;
         font-weight: bold;
@@ -106,9 +109,48 @@
   .comm{
     margin:1rem 0 .5rem;
     font-size:.8rem;
-    text-align:left;
+    text-align:center;
     width:100%;
-    max-width:300px;
+    max-width:90vw;
     color: var(--dgray);
+  }
+}
+
+
+@media screen and (max-width: 999px){
+  .container, .solution {
+    input {
+      width: 100%;
+      max-width: 75vw;
+      font-size: 2rem;
+    }
+    .buttons {
+      button {
+        max-width: 100%;
+        height:3.5rem;
+        &.btn, &.solve, &.clr, &.clearAll {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  
+    .containerList {
+      width: 100%;
+      padding:2rem;
+      .coded {
+        width: 6rem;
+        height: 6rem;
+        font-size: 2.5rem;
+        .alpha {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    #result {
+      font-size: 2.2rem;
+    }
+    .comm{
+      font-size:1.8rem;
+    }
   }
 }

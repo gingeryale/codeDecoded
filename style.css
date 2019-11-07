@@ -8,8 +8,11 @@
   --lblue: #74d7e6;
 }
 
-.container {
+body {
   font-size: 10px;
+}
+
+.container {
   font-family: arial;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,7 +65,7 @@
   border: 1px solid var(--dgray);
 }
 
-.container .buttons button.btn, .container .buttons button.solve {
+.container .buttons button.btn, .container .buttons button.solve, .container .buttons button.clearAll {
   background-color: var(--green);
   color: white;
   font-weight: bold;
@@ -145,9 +148,42 @@
 .container .comm {
   margin: 1rem 0 .5rem;
   font-size: .8rem;
-  text-align: left;
+  text-align: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 90vw;
   color: var(--dgray);
+}
+
+@media screen and (max-width: 999px) {
+  .container input, .solution input {
+    width: 100%;
+    max-width: 75vw;
+    font-size: 2rem;
+  }
+  .container .buttons button, .solution .buttons button {
+    max-width: 100%;
+    height: 3.5rem;
+  }
+  .container .buttons button.btn, .container .buttons button.solve, .container .buttons button.clr, .container .buttons button.clearAll, .solution .buttons button.btn, .solution .buttons button.solve, .solution .buttons button.clr, .solution .buttons button.clearAll {
+    font-size: 1.8rem;
+  }
+  .container .containerList, .solution .containerList {
+    width: 100%;
+    padding: 2rem;
+  }
+  .container .containerList .coded, .solution .containerList .coded {
+    width: 6rem;
+    height: 6rem;
+    font-size: 2.5rem;
+  }
+  .container .containerList .coded .alpha, .solution .containerList .coded .alpha {
+    font-size: 1.5rem;
+  }
+  .container #result, .solution #result {
+    font-size: 2.2rem;
+  }
+  .container .comm, .solution .comm {
+    font-size: 1.8rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
